@@ -1,5 +1,6 @@
 use crate::ccy;
 
+#[derive(Debug, Clone, Copy)]
 pub struct FXRate {
     pub ccy1 : ccy::CCY,
     pub ccy2 : ccy::CCY,

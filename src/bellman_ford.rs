@@ -8,9 +8,23 @@ pub struct Edge {
     pub cost: f32
 }
 
+impl Edge {
+    pub fn diplay_edge(&self) -> () {
+        println!("{}->{}, cost={}",self.a, self.b, self.cost);
+    }
+}
+
 pub struct Graph {
     pub num_vertex: u32,
     pub edges: Vec<Edge>,    
+}
+
+impl Graph {
+    pub fn display_graph(&self) -> () {
+        for e in self.edges.iter() {
+            e.diplay_edge();
+        }
+    } 
 }
 
 pub fn bellman_ford_neg_cycle( graph: &Graph ) -> (bool, Vec<u32>) {
@@ -59,3 +73,4 @@ pub fn print_cycle(cycle: &Vec<u32>) -> () {
     let res_str: String = cycle_str.join("->");
     println!("{}",res_str);
 }
+
